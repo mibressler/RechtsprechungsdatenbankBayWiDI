@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare patch-package"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/ui": "^2.18.7",
+    "nuxt": "^3.14.0"
+  },
+  "dependencies": {
+    "@nuxt/ui-pro": "^1.4.4",
+    "@supabase/supabase-js": "^2.47.8",
+    "markdown-it": "^14.1.0",
+    "patch-package": "^8.0.0"
+  }
+}

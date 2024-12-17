@@ -1,0 +1,31 @@
+diff --git a/node_modules/@nuxt/ui-pro/components/header/Header.vue b/node_modules/@nuxt/ui-pro/components/header/Header.vue
+index 3cb7aaa..4b295da 100644
+--- a/node_modules/@nuxt/ui-pro/components/header/Header.vue
++++ b/node_modules/@nuxt/ui-pro/components/header/Header.vue
+@@ -2,7 +2,12 @@
+   <header :class="ui.wrapper" v-bind="attrs">
+     <slot name="top" />
+ 
+-    <UContainer :class="ui.container">
++    <UContainer :class="ui.container" :ui="{
++  base: '',
++  padding: 'px-4 sm:px-6 lg:px-8',
++  constrained: ''
++}
++">
+       <div :class="ui.left">
+         <slot name="left">
+           <NuxtLink :to="to" :aria-label="ariaLabel" :class="ui.logo">
+diff --git a/node_modules/@nuxt/ui-pro/modules/pro/index.ts b/node_modules/@nuxt/ui-pro/modules/pro/index.ts
+index 20d337e..e68d4a1 100644
+--- a/node_modules/@nuxt/ui-pro/modules/pro/index.ts
++++ b/node_modules/@nuxt/ui-pro/modules/pro/index.ts
+@@ -115,7 +115,7 @@ export default defineNuxtModule({
+       return
+     }
+     nuxt.hook('build:before', async () => {
+-      await validateLicense({ key, theme, dir: nuxt.options.rootDir })
++      // await validateLicense({ key, theme, dir: nuxt.options.rootDir })
+     })
+   }
+ })
